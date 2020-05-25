@@ -1,2 +1,5 @@
-FROM httpd:2.4
-COPY ./public-html/ /usr/local/apache2/htdocs/
+FROM tomcat:latest
+ADD http://ftp.yz.yamagata-u.ac.jp/pub/misc/jenkins/war/2.48/jenkins.war /var/lib/jenkins/cert/webapps/jenkins.war
+EXPOSE 8080
+CMD ["startup.sh,""run"]
+
